@@ -1,3 +1,26 @@
+<?php
+
+require_once './Models/Category.php';
+require_once './Models/Product.php';
+require_once './Models/Food.php';
+require_once './Models/Toy.php';
+
+$categories = [
+    "dogs" => new Category("Cani"),
+    "cats" => new Category("Gatti")
+];
+
+$products = [
+    new Food("https://arcaplanet.vtexassets.com/arquivos/ids/284156/pedigree-dentastix-medium-main.jpg?v=638174869086130000", "Dentastix", $categories["dogs"], 30.99, "lorem", "105 pcs", ["prodotti di origine vegetale", "carni varie"], "1pc al giorno"),
+    new Toy("https://arcaplanet.vtexassets.com/arquivos/ids/272941/frisbee-rosso-15-cm.jpg?v=1769591173", "Frisbee", $categories["dogs"], 4.69, "lorem", "15 cm"),
+    new Food("https://arcaplanet.vtexassets.com/arquivos/ids/207882/Multipack-Next-Natural-Gatto-Tonnetto-e-Salmone-in-gelatina-6x50g.jpg?v=1769602330", "Next Cat Natural Tonnetto Salmone", $categories["cats"], 6.99, "lorem", "6x50g", ["tonnetto", "salmone", "riso"], "fino a 2 lattine al giorno"),
+    new Toy("https://arcaplanet.vtexassets.com/arquivos/ids/277674/ap20036.jpg?v=1768868507", "Tiragraffi", $categories["cats"], 54, "lorem", "61x45x105 cm")
+];
+
+var_dump($products);
+
+?>
+
 <!DOCTYPE html>
 <html lang="it">
 
