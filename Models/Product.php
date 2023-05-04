@@ -17,6 +17,31 @@ class Product
         $this->description = $description;
     }
 
+    public function getImageUrl()
+    {
+        return $this->img;
+    }
+
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    public function getPrice()
+    {
+        return $this->price;
+    }
+
+    public function getCategory()
+    {
+        return $this->category;
+    }
+
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
     public static function getClassName()
     {
         return "Altro";
