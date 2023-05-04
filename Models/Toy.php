@@ -10,4 +10,9 @@ class Toy extends Product
 
         $this->size = $size;
     }
+
+    public static function getClassName()
+    {
+        return "Giochi";
+    }
 }

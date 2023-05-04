@@ -14,4 +14,9 @@ class Food extends Product
         $this->ingredients = $ingredients;
         $this->dosage = $dosage;
     }
+
+    public static function getClassName()
+    {
+        return "Cibo";
+    }
 }
