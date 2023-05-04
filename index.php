@@ -31,7 +31,7 @@ require_once './db.php';
                     <img class="card-img-top product-image" src="<?= $product->getImageUrl() ?>" alt="">
                     <div class="card-body">
                         <h2 class="card-title fs-4"><?= $product->getName() ?></h2>
-                        <span>Prezzo: € <?= $product->getPrice() ?></span>
+                        <span>Prezzo: € <?= number_format($product->getPrice(), 2) ?></span>
                         <div class="product-category">
                             <span>Categoria: </span>
                             <img class="product-category-icon" src="<?= $product->getCategory()->getIcon() ?>" alt="">
