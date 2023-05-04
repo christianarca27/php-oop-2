@@ -30,7 +30,7 @@ require_once './db.php';
                 <li class="card product">
                     <img class="card-img-top product-image" src="<?= $product->getImageUrl() ?>" alt="">
                     <div class="card-body">
-                        <h2 class="card-title"><?= $product->getName() ?></h2>
+                        <h2 class="card-title fs-4"><?= $product->getName() ?></h2>
                         <span>Prezzo: € <?= $product->getPrice() ?></span>
                         <div class="product-category">
                             <span>Categoria: </span>
