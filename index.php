@@ -37,7 +37,6 @@ require_once './db.php';
                             <img class="product-category-icon" src="<?= $product->getCategory()->getIcon() ?>" alt="">
                         </div>
                         <div>Tipologia prodotto: <?= get_class($product)::getClassName() ?></div>
-                        <div class="card-text">Descrizione: <?= $product->getDescription() ?></div>
                     </div>
                 </li>
             <?php
