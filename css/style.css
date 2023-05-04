@@ -1,0 +1,11 @@
+#product-list {}
+
+#product-list .product {}
+
+#product-list .product .product-image {}
+
+#product-list .product .product-category img {
+    width: 25px;
+    aspect-ratio: 2/3;
+    object-fit: cover;
+}
