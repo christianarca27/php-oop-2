@@ -12,7 +12,7 @@ if (isset($_GET["product-name"], $_GET["product-price"])) {
             if ($product->getName() == $productToEdit) {
                 try {
                     $product->setPrice($_GET["product-price"]);
-                    $editingRes = "Prodotto aggiunto correttamente.";
+                    $editingRes = "Prodotto modificato correttamente.";
                 } catch (Exception $e) {
                     $editingRes = $e->getMessage();
                 }
