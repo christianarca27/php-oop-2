@@ -15,6 +15,8 @@ require_once './db.php';
 
     <!-- style -->
     <link rel="stylesheet" href="css/style.css">
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- bootstrap -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css">
 </head>
@@ -30,11 +32,11 @@ require_once './db.php';
                 <li class="card product">
                     <img class="card-img-top product-image" src="<?= $product->getImageUrl() ?>" alt="">
                     <div class="card-body">
-                        <h2 class="card-title fs-4"><?= $product->getName() ?></h2>
+                        <h3 class="card-title fs-4"><?= $product->getName() ?></h3>
                         <span>Prezzo: € <?= number_format($product->getPrice(), 2) ?></span>
                         <div class="product-category">
                             <span>Categoria: </span>
-                            <img class="product-category-icon" src="<?= $product->getCategory()->getIcon() ?>" alt="">
+                            <i class="fa-solid <?= $product->getCategory()->getIcon() ?>"></i>
                         </div>
                         <div>Tipologia prodotto: <?= get_class($product)::getClassName() ?></div>
                     </div>
