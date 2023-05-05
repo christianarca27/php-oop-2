@@ -2,6 +2,27 @@
 
 require_once './db.php';
 
+$editingRes = "";
+if (isset($_GET["product-name"], $_GET["product-price"])) {
+    $productToEdit = $_GET["product-name"];
+
+    if ($productToEdit != "") {
+        $editingRes = "Prodotto non trovato.";
+        foreach ($products as $product) {
+            if ($product->getName() == $productToEdit) {
+                try {
+                    $product->setPrice($_GET["product-price"]);
+                    $editingRes = "Prodotto aggiunto correttamente.";
+                } catch (Exception $e) {
+                    $editingRes = $e->getMessage();
+                }
+            }
+        }
+    } else {
+        $editingRes = "Nome prodotto non valido.";
+    }
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -45,6 +66,32 @@ require_once './db.php';
             }
             ?>
         </ul>
+
+        <form action="index.php" method="get">
+            <h2>Aggiungi prodotto</h2>
+
+            <div class="input-group mb-3">
+                <label class="input-group-text" for="inputGroupSelect01">Nome Prodotto</label>
+                <select name="product-name" class="form-select" id="inputGroupSelect01" required>
+                    <option selected>Scegli...</option>
+                    <?php
+                    foreach ($products as $product) {
+                    ?>
+                        <option value="<?= $product->getName() ?>"><?= $product->getName() ?></option>
+                    <?php
+                    }
+                    ?>
+                </select>
+            </div>
+
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon2">Nuovo prezzo prodotto</span>
+                <input type="number" min=0 step="0.01" name="product-price" class="form-control" aria-describedby="basic-addon2" required>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Cambia</button>
+            <p><?= $editingRes ?></p>
+        </form>
     </div>
 
     <!-- bootstrap -->
