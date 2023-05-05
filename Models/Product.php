@@ -44,6 +44,15 @@ class Product
         return $this->description;
     }
 
+    public function setPrice($price)
+    {
+        if ($price > 0) {
+            $this->price = $price;
+        } else {
+            throw new Exception("Prezzo inserito non valido. Inserisci un valore maggiore di 0.");
+        }
+    }
+
     public static function getClassName()
     {
         return "Altro";
